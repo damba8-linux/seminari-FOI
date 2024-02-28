@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <title>kocke</title>
+        <script src="./lib/jquery-3.3.1.min.js"></script>
+        <script src="./lib/bootstrap.bundle.min.js"></script>
+        <script src="./lib/dat.gui.min.js"></script>
+        <link rel="stylesheet" href="./lib/bootstrap.min.css">
+        <style>
+            body {margin: 0; overflow: hidden}
+            button:focus {outline:0 !important;}
+            .btn.btn-custom-sm {
+                border-radius: 0;
+            }
+            .card {
+                background-color: rgba(255,255,255, 0.95) !important;
+                font-size: 95%;
+            }
+            .dg.a { margin-right:0px !important; }
+}
+        </style>
+    </head>
+
+    <body>
+        <div style="position: absolute; left:0px; top: 0px;">
+        <a class="btn btn-secondary btn-sm btn-custom-sm shadow-none" data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="collapseExample" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </svg>
+        </a>
+        </div>
+
+        <div class = "collapse show" id = "info" style="position: absolute; left:8px; top: 50px; width:450px;">
+        <div class="card border-dark">
+        <div id="infoHead" class="card-header">Help</div>
+        <div id="infoBody" class="card-body">
+        <p><b>pomicanje kamere oko objekta</b> - micanje miša lijevo/desno uz pritisnutu lijevu tipku miša. <br>
+        <b>mijenjanje visine kamere</b> - micanje miša gore/dolje uz pritisnutu lijevu tipku miša. <br>
+        <b>zoom</b> - pomoću srednje tipke miša (scroll) ili uz pritisnu srednju tipku miša i micanje mišem gore/dolje. <br>
+        <b>mijenjanje visine pogleda kamere</b> - pomoću gornje i donje strelice na tastaturi. Visina pogleda kamere je ograničena
+        na cjelobrojne vrijednosti između 1 i 32.</p>
+        </div>
+        </div>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true" data-bs-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Zadatak</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <p>Na kocku duljine brida <i>a</i> postavi se nova kocka kojoj vrhovi donje osnovice leže u polovištima bridova gornje osnovice prve
+              kocke. Na isti način se na drugu kocku postavi treća kocka, na treću kocku četvrta kocka itd. Odredite zbroj volumena svih ovih kocaka.</p>
+              <hr>
+              <p><b>Rješenje.</b> Duljine bridova kocki čine geometrijski niz:</p>
+              <center><p><img src='./pic/geoniz1.png'></p></center>
+              <p>Volumeni kocki također čine geometrijski niz:</p>
+              <center><p><img src='./pic/geoniz2.png'></p></center>
+              <p>Suma volumena svih kocki jednaka je sumi pripadnog geometrijskog reda:</p>
+              <center><p><img src='./pic/geoniz3.png'></p></center>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: absolute; left:0px; bottom:0px;">
+            <span class="badge text-bg-primary" style="border-radius: 0; font-size:85%; diplay: inline-block; width: 200px; text-align: left;">Visina pogleda kamere&nbsp;&nbsp;<span class="badge text-bg-light" id="pogkam">25</span></span>
+        </div>
+
+        <div id="WebGL-output"></div>
+
+	<body>
+		<script type="module" src="./kocke.js"></script>
+	</body>
+</html>
