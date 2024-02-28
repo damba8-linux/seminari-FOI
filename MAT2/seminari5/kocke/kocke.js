@@ -118,7 +118,7 @@ function init() {
 	var sve_kocke = [kocka1, kocka2, kocka3, kocka4, kocka5, kocka6, kocka7];
 
 	var orbitControls = new OrbitControls(camera, renderer.domElement);
-	orbitControls.minDistance = 10;
+	orbitControls.minDistance = 5;
 	orbitControls.maxDistance = 100;
 	orbitControls.enablePan = false;
 	orbitControls.maxPolarAngle = 3.14;
